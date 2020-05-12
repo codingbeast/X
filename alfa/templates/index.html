@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/mystyle.css' %}" />
+  <title>Project Alfa </title>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        {%for my in data %}
+        <div class="col-md-4">
+            <div class="img-responsive thumbnail">
+                <a href="watch/{{my.title}}?id={{my.url}}">
+                <img src="{{my.image}}" alt="{{my.title}}" style="width:100%" >
+                <div class = "caption" >
+                    <p>{{my.title}}</p>
+                </div>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+
+
+
+
+
+
+<center>
+<a href="{{previewpage}}" class="previous">&laquo; Previous</a>
+<a href="{{nextpage}}" class="next">Next &raquo;</a>
+</center>
+</body>
+</html> 
